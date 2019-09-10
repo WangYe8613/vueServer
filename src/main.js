@@ -36,3 +36,11 @@ new Vue({
         this.$store.commit('setTagsList', tagsList);
     }
 });
+
+// 引用axios，并设置基础URL为后端服务api地址
+var axios = require('axios')
+axios.defaults.baseURL = "http://localhost:8080/ssmServer_war_exploded"
+//设置全局，每次ajax请求携带cookies
+// axios.defaults.withCredentials = true
+// 将API方法绑定到全局
+Vue.prototype.$axios = axios
