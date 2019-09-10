@@ -39,7 +39,12 @@ new Vue({
 
 // 引用axios，并设置基础URL为后端服务api地址
 var axios = require('axios')
-axios.defaults.baseURL = "http://localhost:8080/ssmServer_war_exploded"
+
+//这个baseURL中要和tomcat中server.xml设置的<Context path="">一样
+//比如：<Context path="abc">，那么baseURL就要设置成http://47.93.44.20:8080/abc
+//比如：<Context path="abc/123">，那么baseURL就要设置成http://47.93.44.20:8080/abc/123
+axios.defaults.baseURL = "http://47.93.44.20:8080/"  //47.93.44.20是我的云服务器的公网ip，读者要改成自己的
+
 //设置全局，每次ajax请求携带cookies
 // axios.defaults.withCredentials = true
 // 将API方法绑定到全局
