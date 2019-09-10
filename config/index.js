@@ -13,8 +13,8 @@ module.exports = {
     proxyTable: {},
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8090, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host: '0.0.0.0', // 设置成0.0.0.0后部署在云服务器上就可以通过公网ip访问了
+    port: 8090, // 避免和tomcat常用的8080端口冲突
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
