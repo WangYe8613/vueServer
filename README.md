@@ -7,11 +7,11 @@
 [nodejs官网下载页](http://nodejs.cn/download/)
 
 1.点击链接进入界面如下图：
-![如果图片未显示，请检查路径](src/images/vueServer-1.png)
+![如果图片未显示，请检查路径](./src/images/vueServer-1.png)
 
 2.可以下载到本地再上传到服务器，或者复制如下图中的链接，使用wget指令直接下载
 
-![如果图片未显示，请检查路径](src/images/vueServer-2.png)
+![如果图片未显示，请检查路径](./src/images/vueServer-2.png)
 ```bash
 # 1.使用wget指令下载对应压缩包
 wget https://cdn.npm.taobao.org/dist/node/v12.10.0/node-v12.10.0-linux-x64.tar.xz
