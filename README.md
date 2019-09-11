@@ -1,6 +1,8 @@
 <h1 > vueServer </h1>
 
 > 基于VUE框架的前端模版
+> 
+>在此感谢github用户LWD8，该项目的最初版本（参考分支version_1.0）基本是使用他的源码，github链接：[LWD8/vue2-cli-iview](https://github.com/LWD8/vue2-cli-iview)
 
 <h2 > 服务部署环境nodejs安装 </h2>
 
