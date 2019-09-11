@@ -1,46 +1,24 @@
-<h1 > vueServer </h1>
+<h1 > vueServer：版本1.0 </h1>
 
-> 基于VUE框架的前端模版
+> 作者前言：务必认真阅读master分支以及当前分支的README.md
 
-<h2 > 服务部署环境nodejs安装 </h2>
+<h2 > 如何正确食用（吸溜～） </h2>
+<h3 > 0.使用vue框架所需的知识基础 </h3>
 
-[nodejs官网下载页](http://nodejs.cn/download/)
+> 这里只是简单使用，并不是深入研究，只需要对html这类标签语言懂一点就够了，如果你做个简单的但完整的JavaWeb项目，那么这个使用vue框架就更没问题了。因为你肯定接触过js、css、jsp了，而且这里也不要求你对它们都精通，只要知道它们都是干什么的，怎么使用的就够了。 有了这些基础（几乎零基础，哈哈哈），只需要按照下面的步骤就能学会怎么用vue框架了。
 
-1.点击链接进入界面如下图：
-![如果图片未显示，请检查路径](./src/images/vueServer-1.png)
+<h3 > 1.当前分支中需要看的文件 </h3>
 
-2.可以下载到本地再上传到服务器，或者复制如下图中的链接，使用wget指令直接下载
+> src/main.js
+> 
+> config/index.js
+>
+> //.js文件就是vue框架中提到的模块，先暂时理解成配置文件也可以
+>
+> src/views/login.vue
+>
+> //.vue文件就是vue框架里的.html或者.jsp文件
 
-![如果图片未显示，请检查路径](./src/images/vueServer-2.png)
-```bash
-# 1.使用wget指令下载对应压缩包
-wget https://cdn.npm.taobao.org/dist/node/v12.10.0/node-v12.10.0-linux-x64.tar.xz
+<h3 > 2.当前分支中需要读的内容 </h3>
 
-# 2.解压压缩包
-tar -xvf node-v12.10.0-linux-x64.tar.xz
-
-# 3.设置软连接 方便使用node、npm命令
-ln -s /你设置的nodejs安装路径/nodejs/bin/npm   /usr/local/bin/ 
-ln -s /你设置的nodejs安装路径/nodejs/bin/node   /usr/local/bin/
-
-# 4.执行node -v和npm -v查看版本
-#   如果显示如下则说明nodejs环境安装完成
-$ node -v
-v10.16.3
-$ npm -v
-6.9.0
-```
-
-
-
-<h2 > 启动服务的步骤 </h2>
-
-``` bash
-# 在项目根目录下执行下面操作
-# 安装依赖
-npm install
-
-# 启动服务
-npm run dev
-```
-
+> 只用认真读一下上面那些文件里的中文注释就好了，基本都能解释清楚
