@@ -30,7 +30,7 @@
               <Button @click="handleSubmit" type="primary" long>登录</Button>
             </FormItem>
           </Form>
-          <p class="login-tip">输入任意用户名和密码即可</p>
+          <p class="login-tip">密码是123456，输入其他密码会提示非法</p>
         </div>
       </Card>
     </div>
@@ -42,6 +42,7 @@
   import Qs from 'qs'
 
   export default {
+    //设置一些默认数据，供前端代码使用
     data() {
       return {
         form: {
@@ -59,22 +60,27 @@
       };
     },
     methods: {
+      //在这里写响应方法
       handleSubmit() {
-        var data = Qs.stringify({"userName":"1","password":"2"});
+        //这里就使用main.js中定义的全局变量$axios来发起http请求
         this.$axios({
-          method:'get',
-          url:'/api/checkLogin',
-          params:{
-            userName:this.form.userName,
-            password:this.form.password
+          method: 'get', //请求方式
+          url: '/api/checkLogin', //api对应url，要和后端设置的一致
+          params: { //传参
+            userName: this.form.userName,
+            password: this.form.password
           }
-        }).then(response => {
-          var responseCode=response.data.code;
-          var responseData=response.data.data;
-          var responseMessage=response.data.message;
+        }).then(response => { //获取http响应数据
+          //response.data对应后端服务返回的json类型数据
+          //下面三个数据请和后端服务中的返回数据对比
+          //具体文件：ssmServer项目version_1.1分支中ssmServer/src/main/java/com/lw/common/Response.java
+          var responseCode = response.data.code; //返回错误码
+          var responseData = response.data.data; //返回对象
+          var responseMessage = response.data.message; //返回信息
+
           //下面两个if判断中的写法都行
-          //if(JSON.parse(JSON.stringify(responseResult))['data'] == "b"){
-          if(responseCode == 200){
+          //if(JSON.parse(JSON.stringify(response.data))['code'] == 200){
+          if (responseCode == 200) {
             //校验成功，跳转登录界面
             Cookies.set('user', this.form.userName);
             Cookies.set('password', this.form.password);
@@ -87,7 +93,7 @@
             this.$router.push({
               name: 'home_index'
             });
-          }else {
+          } else {
             //校验失败，提示用户信息有误
             this.$Message.info(responseMessage);
           }
